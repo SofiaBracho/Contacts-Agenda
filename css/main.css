@@ -1,0 +1,229 @@
+:root {
+    --primario: #c21858;
+    --secundario: #ffc107;
+    --primarioOscuro: #9c0a45;
+    --fuentePrimaria: 'Arial', Helvetica, sans-serif;
+    --fuenteSecundaria: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bg-amarillo {
+    background-color: var(--secundario);
+}
+.bg-blanco {
+    background-color: white;
+}
+.barra {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+.barra h1{
+    margin-right: 100px;
+}
+/* BOTONES */
+.btn {
+    font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-editar {
+    color: var(--secundario);
+}
+.btn-borrar {
+    color: var(--primario);
+}
+.volver {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    font-family: var(--fuenteSecundaria);
+    margin: 0;
+    text-align: center;
+}
+h1{
+    padding: 20px;
+    color: white;
+}
+h2 {
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+/** Barra **/
+
+.contenedor-barra {
+    background-color: var(--primarioOscuro);
+}
+
+/** Formulario **/
+
+form {
+    margin-top: 2rem;
+    padding: 3rem;
+}
+form legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+}
+legend span {
+    clear: both;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo {
+        flex: 0 0 calc(33.3% - 1rem);
+        padding: .5rem 0;
+    }
+}
+
+.campo {
+    margin-top: .5rem;
+}
+.campo input[type="text"],
+.campo input[type="tel"] {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+input[type="submit"] {
+    padding: 1rem 4rem;
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    transition: background-color .5s ease;
+    flex: 1;    
+}
+input[type="submit"]:hover {
+    background-color: var(--primarioOscuro);
+    cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+    input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+/** Contactos **/
+.contactos {
+    padding: 2rem;
+    margin-top: 3rem;
+}
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+.buscador {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    margin: 2rem 0;
+}
+.total-contactos {
+    font-family: var(--fuenteSecundaria);
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+}
+.total-contactos span {
+    font-size: 3rem;
+    font-weight: 900;
+    padding-right: 5px;
+}
+@media only screen and (max-width: 450px) {
+    .contenedor-tabla {
+        overflow: scroll;
+    }
+} 
+.listado-contactos {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+.listado-contactos thead {
+    background-color: var(--primario);
+    color: white;
+    text-transform: uppercase;
+}
+.listado-contactos thead th {
+    padding: 1rem 0;
+}
+.listado-contactos tbody td {
+    padding: .5rem;
+    text-align: center;    
+}
+.listado-contactos button {
+    background-color: transparent;
+    border: none;
+}
+/* Notificaciones */
+
+.notificacion {
+    opacity: 0;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    transition: opacity .5s ease;
+}
+.visible {
+    opacity: 1;
+}
+.error {
+    background-color: #f175a5;
+    color: #690404;
+}
+.exito {
+    background-color: #b5ecab;
+    color: #064213;
+}
